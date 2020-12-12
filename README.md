@@ -35,3 +35,109 @@ npm run-script build
 ```
 npm start
 ```
+
+## API
+
+- Get Stock Symbols
+
+  URL: /stock/symbol
+
+  Method: GET
+
+  URL Params: None
+
+  Success:
+
+  - Status Code: 200
+  - Content:
+
+  ```
+  {
+     result: ["PTT", "2S"]
+  }
+  ```
+
+- Get Stock Prices    
+
+   URL: /stock/prices
+
+   Method: GET
+
+   URL Params:
+   - symbol=[string]
+
+   Success:
+   - Status Code: 200
+   - Content:
+   
+   ```
+   {
+   "result": [
+      {
+         "date": "2563/12/01",
+         "openPrice": 40.5,
+         "closePrice": 41,
+         "highestPrice": 41.5,
+         "lowestPrice": 40.25,
+         "changeInValue": 1,
+         "changeInPercentage": 2.5,
+         "totalVolume": 55259,
+         "totalValue": 2266,
+         "id": 14796
+      }
+   ]
+   }
+   ```
+
+- Get Stock Official News
+
+   URL: /stock/official-news
+
+   Method: GET
+
+   URL Params:
+   - symbol=[string]
+
+   Success:
+   - Status Code: 200
+   - Content:
+   
+   ```
+   {
+   "result": [
+      {
+         "date": "17 ก.ย. 2563 18:20",
+         "source": "A",
+         "name": "เข้าทำธุรกรรมการจำหน่ายเงินลงทุนและสินทรัพย์หมุนเวียนประเภทโครงการอสังหาริมทรัพย์ระหว่างการพัฒนา",
+         "link": "/set/newsdetails.do?newsId=16002932032641&language=th&country=TH",
+         "id": 130
+      }
+   ]
+   }
+   ```
+
+- Get Stock Social Media News
+
+   URL: /stock/socialmedia-news
+
+   Method: GET
+
+   URL Params:
+   - symbol=[string]
+
+   Success:
+   - Status Code: 200
+   - Content:
+   
+   ```
+   {
+   "result": [
+      {
+         "date": "2020-12-12",
+         "name": "3K-BAT ชี้แจงข่าว",
+         "link": "https://www.set.or.th/set/newsdetails.do?newsId=16049597968251&language=th&country=TH",
+         "id": 16122
+      }
+   ]
+   }
+   ```
