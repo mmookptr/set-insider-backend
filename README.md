@@ -36,6 +36,10 @@ npm run-script build
 npm start
 ```
 
+## Post Man
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c1c886dcfa826bd62c8f)
+
 ## API
 
 - Get Stock Symbols
