@@ -1,7 +1,7 @@
 import { EntityTarget, getConnection, Repository } from "typeorm"
 import { Stock } from "./models/Stock"
 import { Price } from "./models/Price"
-import { News } from "./models/News"
+import { SocialMediaNews } from "./models/SocialMediaNews"
 import { OfficialNews } from "./models/OfficialNews"
 import { Request, Response } from "express"
 
@@ -11,7 +11,9 @@ class SETInsiderApplication {
   constructor() {
     this.getStockSymbols = this.getStockSymbols.bind(this)
     this.getStockPricesBySymbol = this.getStockPricesBySymbol.bind(this)
-    this.getStockNewsBySymbol = this.getStockNewsBySymbol.bind(this)
+    this.getStockSocialMediaNewsBySymbol = this.getStockSocialMediaNewsBySymbol.bind(
+      this
+    )
     this.getStockOfficialNewsBySymbol = this.getStockOfficialNewsBySymbol.bind(
       this
     )
@@ -40,10 +42,10 @@ class SETInsiderApplication {
     res.send({ result: officialNews })
   }
 
-  public async getStockNewsBySymbol(req: Request, res: Response) {
+  public async getStockSocialMediaNewsBySymbol(req: Request, res: Response) {
     const symbol = (req as any).query.symbol
     const stock = await this.getStockBySymbol(symbol)
-    const news = await this.getNewsByStock(stock)
+    const news = await this.getSocialMediaNewsByStock(stock)
 
     res.send({ result: news })
   }
@@ -68,8 +70,10 @@ class SETInsiderApplication {
     return await this.getDataWithGivenFilter({ stock }, OfficialNews)
   }
 
-  private async getNewsByStock(stock: Stock): Promise<News[]> {
-    return await this.getDataWithGivenFilter({ stock }, News)
+  private async getSocialMediaNewsByStock(
+    stock: Stock
+  ): Promise<SocialMediaNews[]> {
+    return await this.getDataWithGivenFilter({ stock }, SocialMediaNews)
   }
 
   private async getOneData<T>(

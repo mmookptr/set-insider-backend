@@ -15,7 +15,10 @@ function createRouter(setInsiderApplication: SETInsiderApplication) {
     setInsiderApplication.getStockOfficialNewsBySymbol
   )
 
-  router.get("/stock/socialmedia-news", setInsiderApplication.getStockNewsBySymbol)
+  router.get(
+    "/stock/socialmedia-news",
+    setInsiderApplication.getStockSocialMediaNewsBySymbol
+  )
 
   return router
 }
