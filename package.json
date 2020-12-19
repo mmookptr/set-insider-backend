@@ -12,7 +12,7 @@
     "url": "git+https://github.com/KornSiwat/swift-set-insider-backend.git"
   },
   "author": "Siwat Ponpued, Patteera Likitamnuayporn",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/KornSiwat/swift-set-insider-backend/issues"
   },
