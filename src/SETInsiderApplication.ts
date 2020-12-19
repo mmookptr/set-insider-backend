@@ -27,27 +27,39 @@ class SETInsiderApplication {
   }
 
   public async getStockPricesBySymbol(req: Request, res: Response) {
-    const symbol = (req as any).query.symbol
-    const stock = await this.getStockBySymbol(symbol)
-    const prices = await this.getPricesByStock(stock)
+    try {
+      const symbol = (req as any).query.symbol
+      const stock = await this.getStockBySymbol(symbol)
+      const prices = await this.getPricesByStock(stock)
 
-    res.send({ result: prices })
+      res.send({ result: prices })
+    } catch (error) {
+      res.status(500).send(error.message)
+    }
   }
 
   public async getStockOfficialNewsBySymbol(req: Request, res: Response) {
-    const symbol = (req as any).query.symbol
-    const stock = await this.getStockBySymbol(symbol)
-    const officialNews = await this.getOfficialNewsByStock(stock)
+    try {
+      const symbol = (req as any).query.symbol
+      const stock = await this.getStockBySymbol(symbol)
+      const officialNews = await this.getOfficialNewsByStock(stock)
 
-    res.send({ result: officialNews })
+      res.send({ result: officialNews })
+    } catch (error) {
+      res.status(500).send(error.message)
+    }
   }
 
   public async getStockSocialMediaNewsBySymbol(req: Request, res: Response) {
-    const symbol = (req as any).query.symbol
-    const stock = await this.getStockBySymbol(symbol)
-    const news = await this.getSocialMediaNewsByStock(stock)
+    try {
+      const symbol = (req as any).query.symbol
+      const stock = await this.getStockBySymbol(symbol)
+      const news = await this.getSocialMediaNewsByStock(stock)
 
-    res.send({ result: news })
+      res.send({ result: news })
+    } catch (error) {
+      res.status(500).send(error.message)
+    }
   }
 
   private async getAllStocks(): Promise<Stock[]> {
