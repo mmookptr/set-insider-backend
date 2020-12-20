@@ -1,9 +1,18 @@
 # Swift SET Insider Backend
 
+Software Process and Project Management Final Project
+
+## Production Link
+
+- [BACKEND URL](https://set-insider-backend.herokuapp.com)
+
 ## Members
 
 - Patteera Likitamnuayporn 6110545597
 - Siwat Ponpued 6110546640
+- Pawaris Wongsalung 6110545562
+- Thun Thunkijjanukij 6110545546
+- Nattapol Boonyapornpong 6110545503
 
 ## Prerequisite
 
